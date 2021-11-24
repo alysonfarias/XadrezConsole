@@ -1,6 +1,7 @@
 ﻿using System;
 using Table;
 
+
 namespace XadrezConsole
 {
     class Program
@@ -11,6 +12,8 @@ namespace XadrezConsole
 
             P = new Position(3,5);
             Console.WriteLine("Position : " + P);
+
+            tableOne table = new tableOne(8, 8);
 
         }
     }
