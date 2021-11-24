@@ -13,7 +13,9 @@ namespace XadrezConsole
             P = new Position(3,5);
             Console.WriteLine("Position : " + P);
 
-            tableOne table = new tableOne(8, 8);
+            table tab = new table(8, 8);
+
+            Screen.printTable(tab);
 
         }
     }
