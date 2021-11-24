@@ -17,5 +17,12 @@
         {
             return boardPieces[line, column];
         }
+
+        public void insertBoardPiece(BoardPiece boardPiece, Position pos)
+        {
+            boardPieces[pos.line, pos.column] = boardPiece;
+            boardPiece.position = pos;
+
+        }
     }
 }

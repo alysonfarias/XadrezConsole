@@ -7,9 +7,9 @@
         public int movimentQtd { get; protected set; }
         public table table { get; protected set; }
     
-        public BoardPiece (Position position, table table, Color color)
+        public BoardPiece (table table, Color color)
         {
-            this.position = position;
+            this.position = null;
             this.table = table;
             this.color = color;
             this.movimentQtd = 0;
