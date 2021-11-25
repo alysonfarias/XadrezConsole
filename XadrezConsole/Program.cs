@@ -1,6 +1,6 @@
 ﻿using System;
 using Table;
-using xadrez;
+using Xadrez;
 
 namespace XadrezConsole
 {
@@ -10,26 +10,27 @@ namespace XadrezConsole
         {
             try
             {
-                Position P;
+                ChessMatch match = new ChessMatch();
+                while (!match.isFinished)
+                {
+                    Console.Clear();
+                    Screen.printTable(match.tab);
 
-                P = new Position(3, 5);
-                Console.WriteLine("Position : " + P);
+                    Console.WriteLine();
+                    Console.Write("Origem:");
+                    Position originPosition = Screen.readXadrezPosition().toPositition();
+                    Console.Write("Destiny:");
+                    Position destinyOrigin = Screen.readXadrezPosition().toPositition();
 
-                table tab = new table(8, 8);
-                tab.insertBoardPiece(new Tower(tab, Color.Black), new Position(0, 0));
-                tab.insertBoardPiece(new Tower(tab, Color.Black), new Position(1, 3));
-                tab.insertBoardPiece(new Tower(tab, Color.White), new Position(0, 3));
-                Screen.printTable(tab);
+
+                    match.performMoviment(originPosition, destinyOrigin);
+                }
             }
             catch (ExceptionTable e)
             {
                 Console.WriteLine(e.Message);
             }
-            //XadrezPosition P;
-            //P = new XadrezPosition('a', 1);
-            //table tab = new table(8, 8);
-            //Console.WriteLine("Position : " + P.toPositition());
-            //Screen.printTable(tab);
+
         }
     }
 }

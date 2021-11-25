@@ -53,5 +53,19 @@
                 throw new ExceptionTable("Invalid position");
             }           
         }
+
+        public BoardPiece deleteBoardPiece(Position pos)
+        {
+            if(boardPiece(pos) == null)
+            {
+                return null;
+            }
+
+            BoardPiece aux = boardPiece(pos);
+            aux.position = null;
+
+            boardPieces[pos.line, pos.column] = null;
+            return aux;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Table
 {
-    class BoardPiece
+    abstract class BoardPiece
     {
         public Position position { get; set; }
         public Color color { get; set; }
@@ -15,5 +15,11 @@
             this.movimentQtd = 0;
         }
 
+        public void incrementMovimentQtd()
+        {
+            this.movimentQtd++;
+        }
+
+        public abstract bool[,] possibleMoviments();
     }
 }

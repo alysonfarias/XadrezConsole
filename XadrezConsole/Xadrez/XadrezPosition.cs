@@ -1,5 +1,5 @@
 ﻿using Table;
-namespace xadrez
+namespace Xadrez
 {
     class XadrezPosition
     {

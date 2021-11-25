@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Table;
+using Xadrez;
 
 namespace XadrezConsole
 {
@@ -45,6 +46,14 @@ namespace XadrezConsole
                 Console.Write(boardPiece);
                 Console.ForegroundColor = aux;
             }
+        }
+        public static XadrezPosition readXadrezPosition()
+        {
+            string s = Console.ReadLine();
+            char column = s[0];
+            int line = int.Parse(s[1] + "");
+            return new XadrezPosition(column, line);
+
         }
     }
 }
